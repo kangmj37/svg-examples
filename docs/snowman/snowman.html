@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>SVG snow man</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="../vendor/prism-default.css" rel="stylesheet">
+        <script src="../vendor/prism.min.js"  data-manual></script>
+        <link href="../utils.css" rel="stylesheet">
+        <script src="../utils.js"></script>
+        <script>Utils.configureShowSources();</script>
+    </head>
+    <body>
+        <style class="example">
+            #snow svg {
+                width:300px;
+                height:300px;
+                background-color:gainsboro;
+                border: 1px solid black;
+            }
+        </style>
+        <p>snow man</p>
+        
+		<div id="snow">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en">
+				<style type="text/css">
+					text {
+						font-size: 10px;
+						font-weight: bold;
+					}
+				</style>
+				<defs>
+					<radialGradient id="gradient" gradientTransform="scale(3) rotate(45)">
+						<stop stop-color="#000000" offset="0"></stop>
+						<stop stop-color="#ffffff" offset="1"></stop>
+					</radialGradient>
+				</defs>
+				<circle cx="150" cy="80" r="50" fill="url(#gradient)" transform="skewX(0) skewX(0)"/>
+				<text x="150" y="70" text-anchor="middle">-&nbsp;&nbsp;-</text>
+				<circle cx="150" cy="180" r="60" fill="url(#gradient)"/>
+				
+			</svg>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en">
+				<rect id="one" x="100" y="30" rx="45" ry="50" width="100" height="100" fill="url(#gradient)"/>
+				<text id="two" x="150" y="70" text-anchor="middle">-&nbsp;&nbsp;-</text>
+				<rect id="three" x="90" y="125" rx="45" ry="60" width="120" height="120" fill="url(#gradient)"/>
+				<use xlink:href="#one"/>
+				<use xlink:href="#two"/>
+			</svg>
+		</div>
+    </body>
+</html>
